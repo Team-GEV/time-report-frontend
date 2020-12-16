@@ -16,7 +16,7 @@ class B2 extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        let firstname = "Test";
+        let firstname = "Alice";
         let url = "http://localhost:8081/timesheet/byFirstname";
         axios.post(url, {firstname})
             .then(response => {
@@ -60,7 +60,7 @@ class B2 extends Component {
                             <table class="table">
                                 <tbody>
                                     {timesheets.map((timesheet) => (
-                                        <tr>
+                                        <tr key="{timesheet.firstname}">
                                         <td><label>{timesheet.firstname}</label></td>                              
                                         </tr>
                                         ))}                               
