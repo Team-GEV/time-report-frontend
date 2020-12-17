@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import authHeader from '../../services/AuthHeader.js';
 
 class B2 extends Component {
 
@@ -29,7 +30,7 @@ class B2 extends Component {
     }
 
     componentDidMount () {
-        axios.get( 'http://localhost:8081/timesheet/all' )
+        axios.get( 'http://localhost:8081/timesheet/all', { headers: authHeader() })
             .then( response => {                
                 console.log(response);
                 this.setState( {
@@ -60,8 +61,8 @@ class B2 extends Component {
                             <table class="table">
                                 <tbody>
                                     {timesheets.map((timesheet) => (
-                                        <tr key="{timesheet.firstname}">
-                                        <td><label>{timesheet.firstname}</label></td>                              
+                                        <tr key="{timesheet.weekending}">
+                                        <td><label>{timesheet.weekending}</label></td>                              
                                         </tr>
                                         ))}                               
                                 </tbody>
