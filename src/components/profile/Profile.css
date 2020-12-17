@@ -1,0 +1,13 @@
+.form-control {
+	border-radius: 0;
+	border-color: #ccc;
+   	border-style: none none solid none;
+   	box-shadow: none;
+}
+
+form { 
+  width: 50%;
+  margin: auto;
+  display: table;
+  
+  }

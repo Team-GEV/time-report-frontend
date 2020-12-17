@@ -3,11 +3,11 @@ import ProfileServices from '../../services/ProfileServices.js';
 
 
 
+
 class Info extends Component {
 
     constructor(props) {
         super(props);
-        this.input = React.createRef();  
         this.state = {
           //id: this.props.match.params.userid,
           error: null,
@@ -101,36 +101,40 @@ class Info extends Component {
       
         return (
             <div class="card">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                 <div class="card-header card-header-warning">
                     <h4 class="card-title">Profile</h4>
                 </div>
+                </div>
                 <div class="card-body">
+                    
                     <div class="tab-content">
+                    
                         <div class="tab-pane active" id="profile">
-                          <form onSubmit={this.saveProfile}>
-                            
-                            <p>Phone Number</p>
+                            <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                
+                          <form onSubmit={this.saveProfile} >
+                          <div class="group">     
+                          <label class="form-label">Contact</label>
                                 <input
+                                class="form-control"
                                   type='text'
                                   name="phone"
                                   defaultValue={employee.phone}
-                                  ref={this.input}
                                   onChange={this.onChange}
                                 />
-
-                            <div></div>   
-                            
-
-                            <p>Email</p>
+                            </div>   
+                        
                                 <input
+                                class="form-control"
                                   defaultValue={employee.email}                                  
-                                  type='text'
+                                  type='email'
                                   name='email'
                                   onChange={this.onChange}
                                 />
-
-                            <p>Address</p>
                                 <input
+                                class="form-control"
                                   defaultValue={employee.address.line1}
                                   type='text'
                                   name='line1'
@@ -138,6 +142,7 @@ class Info extends Component {
                                 />
                                 
                                 <input
+                                class="form-control"
                                   defaultValue={employee.address.line2}
                                   type='text'
                                   name='line2'
@@ -145,6 +150,7 @@ class Info extends Component {
                                 />
 
                                <input
+                               class="form-control"
                                   defaultValue={employee.address.city}
                                   type='text'
                                   name='city'
@@ -152,6 +158,7 @@ class Info extends Component {
                                 />
 
                                 <input
+                                class="form-control"
                                   defaultValue={employee.address.state}
                                   type='text'
                                   name='state'
@@ -159,20 +166,23 @@ class Info extends Component {
                                 />
 
                                 <input
+                                class="form-control"
                                   defaultValue={employee.address.zipcode}
                                   type='text'
                                   name='zipcode'
                                   onChange={this.onChange}
                                 />
 
-                            <p>Emergency Contact1</p>
+                            <label>Emergency Contact 1</label>
                                 <input
+                                class="form-control"
                                   defaultValue={employee.emergency.firstname1}
                                   type='text'
                                   name='firstname1'
                                   onChange={this.onChange}
                                 />
                                 <input
+                                class="form-control"
                                   defaultValue={employee.emergency.lastname1}
                                   type='text'
                                   name='lastname1'
@@ -180,20 +190,23 @@ class Info extends Component {
                                 />
                                 <div></div>
                                 <input
+                                class="form-control"
                                   defaultValue={employee.emergency.phone1}
                                   type='text'
                                   name='phone1'
                                   onChange={this.onChange}
                                 />
 
-                                <p>Emergency Contact2</p>
+                                <label>Emergency Contact 2</label>
                                 <input
+                                class="form-control"
                                   defaultValue={employee.emergency.firstname2}
                                   type='text'
                                   name='firstname2'
                                   onChange={this.onChange}
                                 />
                                 <input
+                                class="form-control"
                                   defaultValue={employee.emergency.lastname2}
                                   type='text'
                                   name='lastname2'
@@ -201,19 +214,23 @@ class Info extends Component {
                                 />
                                 <div></div>
                                 <input
+                                class="form-control"
                                   defaultValue={employee.emergency.phone2}
                                   type='text'
                                   name='phone2'
                                   onChange={this.onChange}
                                 />
                                 <div></div>
-                              <button className="btn btn-success" onClick={this.saveProfile}>Save</button>
+                              <button className="btn btn-success" onClick={this.saveProfile}>Update</button>
                           </form>
                         </div>  
+                        </div>
+                        </div> 
                         
                         
                     </div>
                 </div>
+               
             </div>
         )
     }
