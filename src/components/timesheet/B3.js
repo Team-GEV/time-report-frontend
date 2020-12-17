@@ -6,29 +6,29 @@ class B3 extends Component {
         ;
       }
 
-      
-  render() {
-    return (
-    <div class="card">
-        <div class="card-header card-header-warning">
-            <h4 class="card-title">Emergency Contacts</h4>
+
+    render() {
+        return (
+        <div class="card">
+            <div class="card-header card-header-warning">
+                <h4 class="card-title">Emergency Contacts</h4>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-warning">
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        </tr>                              
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="card-body table-responsive">
-            <table class="table table-hover">
-                <thead class="text-warning">
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                </thead>
-                <tbody>
-                    <tr>
-                    </tr>                              
-                </tbody>
-            </table>
-        </div>
-    </div>
-    )
-  }
+        )
+    }
 }
 
 export default B3
