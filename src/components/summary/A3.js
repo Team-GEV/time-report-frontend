@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import SummaryService from '../../services/SummaryService'
-import Summarybyline from './summarybyline'
+import SummaryService from '../../services/SummaryService';
+import Summarybyline from './summarybyline';
+import AuthService from "../../services/AuthService.js";
+import { Redirect } from "react-router-dom";
 
 class A3 extends Component {
 
@@ -8,9 +10,11 @@ class A3 extends Component {
         super(props);
         this.state = {
             error: null,
+            redirect: null,
             isLoaded: false,
             summarys: [],
-            showmore : false,
+            showmore: false,
+            username: null,
             cap : 2
         }
         this.handleClick = this.handleClick.bind(this);
@@ -18,14 +22,16 @@ class A3 extends Component {
     }
 
     componentDidMount () {
-        let userid = "base";
+        const user = AuthService.getCurrentUser();
+        if (!user) this.setState({ redirect: "/login" });
+        let userid = user.username;
         SummaryService.loadTimesheet(userid)
             .then( response => {
                 console.log(response);
 
                 this.setState({
                     summarys:response.data,
-
+                    username: userid,
                 })
             })
     }
@@ -51,6 +57,10 @@ class A3 extends Component {
 
 
   render() {
+    if (this.state.redirect) {
+        return <Redirect to={this.state.redirect} />
+    }
+    const { username } = this.state;
     return (
     <div class="card">
         
@@ -59,7 +69,7 @@ class A3 extends Component {
                 {
                     this.state.summarys.slice(0,this.state.cap).map((summarybyline)=>{
                         
-                        return (<Summarybyline 
+                        return (<Summarybyline userid={username}
                             weekending={summarybyline.weekending}
                             totalhours={summarybyline.totalhours}
                             submission={summarybyline.submission}
