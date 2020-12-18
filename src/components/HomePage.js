@@ -78,9 +78,9 @@ class HomePage extends Component {
             {showProfile && (
               <li><NavLink to="/profile">Profile</NavLink></li>
             )}
-            {currentUser && (
+            {/*currentUser && (
               <li><NavLink to="/userinfo">UserSensitiveInfo</NavLink></li>
-            )}
+            )*/}
 
             {currentUser ? (
               <li className="nav-item">

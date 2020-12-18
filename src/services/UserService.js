@@ -1,5 +1,5 @@
 import axios from 'axios';
-import authHeader from './AuthHeader';
+import authHeader from './AuthHeader.js';
 
 const API_URL2 = 'http://localhost:9999/api/test/';
 class UserService {
