@@ -37,7 +37,7 @@ class Timesheet extends Component {
       //         console.log(err.response.data.error);
       //     });
       this.setState({
-        //date: startDate,
+        date: startDate,
       });
     }
 
@@ -85,7 +85,7 @@ class Timesheet extends Component {
               <div class="col-lg-3 col-md-12">
                 <B2 date={2020-12-12} userid={currentUser.username} />
               </div>
-              <div class="col-lg-3 col-md-12">
+              <div class="col-lg-9 col-md-12">
                 <B3 />
               </div>
               {/* <div class="col-lg-2 col-md-12">
