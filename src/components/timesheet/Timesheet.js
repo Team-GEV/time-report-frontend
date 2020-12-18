@@ -88,12 +88,12 @@ class Timesheet extends Component {
               <div class="col-lg-3 col-md-12">
                 <B3 />
               </div>
-              <div class="col-lg-2 col-md-12">
+              {/* <div class="col-lg-2 col-md-12">
                 <B4 />
               </div>
               <div class="col-lg-3 col-md-12">
                 <B5 />
-              </div>
+              </div> */}
             </div>
 
             <div class="row">

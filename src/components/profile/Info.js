@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProfileServices from '../../services/ProfileServices.js';
+import AuthService from '../../services/AuthService.js'
 
 
 
@@ -33,7 +34,8 @@ class Info extends Component {
         
     }
     componentDidMount () {
-        let userid = "1";
+      const currentUser = AuthService.getCurrentUser();
+      const userid = currentUser.username;
         ProfileServices.loadEmployee(userid)
             .then( response => {                
                 console.log(response);
